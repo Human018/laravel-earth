@@ -194,11 +194,13 @@ class EarthInit extends Command
                         $bar->advance();
                     }
                     $bar->finish();
+                    echo "\n";
                 }
 
-                Storage::delete($filename);
-                Storage::delete($adminCodes);
-                Storage::delete(storage_path(strtoupper($country->code) . '.txt'));
+                File::delete($filename);
+                File::delete($adminCodes);
+                File::delete(storage_path(strtoupper($country->code) . '.txt'));
+                File::delete(storage_path('readme.txt'));
             }
         }
     }
