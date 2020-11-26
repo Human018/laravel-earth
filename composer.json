@@ -2,6 +2,13 @@
     "name": "human018/laravel-earth",
     "description": "A multilingual Laravel package to populate continents, countries, regions and cities for planet Earth",
     "type": "library",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ],
+
     "require": {
         "php": ">=7.4",
         "laravel/framework": ">=8.0.0",
