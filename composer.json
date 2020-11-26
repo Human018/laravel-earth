@@ -1,0 +1,29 @@
+{
+    "name": "human018/laravel-earth",
+    "description": "A multilingual Laravel package to populate continents, countries, regions and cities for planet Earth",
+    "type": "library",
+    "require": {
+        "php": ">=7.4",
+        "laravel/framework": ">=8.0.0",
+        "npm-asset/country-region-data": ">=1.7.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Simon Woodard",
+            "email": "design@simonwoodard.com.au"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Human018\\LaravelEarth\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Human018\\LaravelEarth\\Providers\\LaravelEarthServiceProvider"
+            ]
+        }
+    }
+}
