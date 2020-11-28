@@ -51,6 +51,16 @@ This project is built using Laravel 8 and is not currently backwards compatible 
 * Guzzle
 * ZipArchive
 
+Because this library uses an NPM package as one of it's data sources, you will need to allow composer to download an NPM package. To do so add the following property (or append to the already existing property) to the `repositories` array/object in your composer.json file.
+```json
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ]
+```
+
 
 ### Installation
 
