@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 class EarthContinentsSeed extends Seeder
 {
     /**
-     * Run the database seeds.
+     * Run the database seeders.
      *
      * @return void
      */
