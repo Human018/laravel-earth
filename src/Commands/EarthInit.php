@@ -69,7 +69,8 @@ class EarthInit extends Command
     public function seedContinents()
     {
         $this->call('db:seed', [
-            '--class' => '\Human018\LaravelEarth\database\seeders\EarthContinentsSeed'
+            '--class' => '\Human018\LaravelEarth\database\seeders\EarthContinentsSeed',
+            '--force' => true
         ]);
     }
 
