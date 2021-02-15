@@ -5,7 +5,8 @@
     "require": {
         "php": ">=7.4",
         "laravel/framework": "^8.0.0",
-        "npm-asset/country-region-data": "^1.7.0"
+        "npm-asset/country-region-data": "^1.7.0",
+        "staudenmeir/eloquent-has-many-deep": "^1.7"
     },
     "license": "MIT",
     "authors": [

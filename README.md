@@ -74,12 +74,17 @@ Because this library uses an NPM package as one of it's data sources, you will n
    ```
 3. This package seeds the database with various sources (listed below) so an initialisation script need to be run in order to access these third-party sources and seed your database.
    ```PHP
-   php artisan earth:seed
+   php artisan earth:init
    ```
    
-4. (_Optional_) If you want to seed all the cities in a certain country pass in the country code, or multiple comma separated country codes.
+4. (_Optional_) If you want to seed all the cities in a certain country pass in the country code. Note that this may take a long time depending on the country you're seeding.
     ```PHP
-   php artisan earth:seed --country=au,us 
+   php artisan earth:init --country=au
+   ```
+   
+4. (_Optional_) You can also seed all major cities (over 15,000 in pop.).
+    ```PHP
+   php artisan earth:init --cities=major
    ```
 <!-- USAGE EXAMPLES -->
 ## Usage
@@ -91,6 +96,8 @@ use Human018\LaravelEarth\Models\Region;
 use Human018\LaravelEarth\Models\City;
 use Human018\LaravelEarth\Models\Language;
 use Human018\LaravelEarth\Models\Currency;
+use Human018\LaravelEarth\Models\Timezone;
+use Human018\LaravelEarth\Models\TimezoneUTC;
 ``` 
 
 A couple of helpful methods for finding the correct resource are included. This means the resource name or code can be used to quickly locate a resource.
@@ -112,6 +119,18 @@ echo $region->country->name;
 echo $region->country->capital->name;
 // Returns 'Canberra'
 ``` 
+
+Retrieving timezones are slightly more complicated. Currently timezones are connected to Countries rather than Regions or Cities. Because a country can have multiple UTC zones, and in turn those zones can belong to the same Timezone, retrieving the relationship just requires us to use the unique query modifier.
+
+```PHP
+$country = Country::code('ca'); // Canada
+$country->timezones->pluck('label');
+// Returns duplicates because it's unique UTC zones
+// belong to many of the same Timezones
+
+$country->timezones->unique()->pluck('label');
+// Returns only unique timezones
+```
 
 <!-- CONTRIBUTING -->
 ## Contributing

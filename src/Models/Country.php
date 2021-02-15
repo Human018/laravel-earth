@@ -4,10 +4,11 @@ namespace Human018\LaravelEarth\Models;
 
 use Human018\LaravelEarth\Traits\EarthTrait;
 use Illuminate\Database\Eloquent\Model;
+use Staudenmeir\EloquentHasManyDeep\HasRelationships;
 
 class Country extends Model
 {
-    use EarthTrait;
+    use EarthTrait, HasRelationships;
 
     protected $table = 'earth_countries';
 
@@ -44,5 +45,18 @@ class Country extends Model
     public function languages()
     {
         return $this->morphToMany(Language::class, 'area', 'earth_area_language', 'area_id', 'earth_language_id')->withPivot('primary');
+    }
+
+    public function utcs()
+    {
+        return $this->belongsToMany(TimezoneUTC::class,
+        'earth_timezone_utc_country',
+        'earth_country_id',
+        'earth_timezone_utc_id');
+    }
+
+    public function timezones()
+    {
+        return $this->hasManyDeepFromRelations($this->utcs(), (new TimezoneUTC)->timezone());
     }
 }

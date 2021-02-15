@@ -9,6 +9,7 @@ use Human018\LaravelEarth\Models\Country;
 use Human018\LaravelEarth\Models\Currency;
 use Human018\LaravelEarth\Models\Language;
 use Human018\LaravelEarth\Models\Region;
+use Human018\LaravelEarth\Models\TimezoneUTC;
 use Illuminate\Console\Command;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\File;
@@ -21,7 +22,7 @@ class EarthInit extends Command
      *
      * @var string
      */
-    protected $signature = 'earth:init {--country=null}';
+    protected $signature = 'earth:init {--country=} {--cities=}';
 
     /**
      * The console command description.
@@ -60,10 +61,12 @@ class EarthInit extends Command
         $this->info('Seeding Json Region Data');
         $this->seedRegions();
 
-        if($this->option('country')) {
+        $this->info('Seeding Timezone Data');
+        $this->seedTimezones();
+
+        if($this->option('cities') || $this->option('country')) {
             $this->seedCities();
         }
-
     }
 
     public function seedContinents()
@@ -148,61 +151,93 @@ class EarthInit extends Command
         }
     }
 
+    public function seedTimezones()
+    {
+        $this->call('db:seed', [
+            '--class' => '\Human018\LaravelEarth\database\seeders\EarthTimezonesTableSeeder',
+            '--force' => true
+        ]);
+        $this->call('db:seed', [
+            '--class' => '\Human018\LaravelEarth\database\seeders\EarthTimezoneUtcTableSeeder',
+            '--force' => true
+        ]);
+        $this->call('db:seed', [
+            '--class' => '\Human018\LaravelEarth\database\seeders\EarthTimezoneUtcCountryTableSeeder',
+            '--force' => true
+        ]);
+    }
+
+
     public function seedCities()
     {
-        $countryCodes = explode(',', $this->option('country'));
-        foreach($countryCodes as $code) {
-            if ($country = Country::code($code)) {
-                $this->info('Seeding City Data for ' . $country->name);
-                $filename = storage_path('citydata.zip');
-                $adminCodes = storage_path('adminCodes.txt');
-                copy($this->city_endpoint . strtoupper($country->code) . '.zip', $filename);
-                copy($this->city_endpoint . 'admin1CodesASCII.txt', $adminCodes);
+        // Prepare some shared resources
+        $filename = storage_path('citydata.zip');
+        $adminCodes = storage_path('adminCodes.txt');
+        copy($this->city_endpoint . 'admin1CodesASCII.txt', $adminCodes);
 
-                $data = file_get_contents($adminCodes);
-                $lines = explode("\n", $data);
-                $codes = new Collection();
-                foreach ($lines as $line) {
-                    $col = explode("\t", $line);
-                    if (count($col) >= 2) {
-                        $codes->put($col[0], $col[1]);
-                    }
-                }
-
-                $zip = new \ZipArchive();
-                if ($res = $zip->open($filename)) {
-                    $zip->extractTo(storage_path());
-                    $zip->close();
-
-                    $data = file_get_contents(storage_path(strtoupper($country->code) . '.txt'));
-                    $lines = explode("\n", $data);
-
-                    $bar = $this->output->createProgressBar(count($lines));
-                    $bar->start();
-
-                    foreach ($lines as $line) {
-                        $col = explode("\t", $line);
-                        if(count($col) >= 10) {
-                            if ($adminZone = $codes->get($col[8] . '.' . $col[10])) {
-                                if ($region = Region::name($adminZone)) {
-                                    City::firstOrCreate(
-                                        ['country_id' => $country->id, 'name' => $col[1]],
-                                        ['region_id' => $region->id, 'code' => $col[7]]
-                                    );
-                                }
-                            }
-                        }
-                        $bar->advance();
-                    }
-                    $bar->finish();
-                    echo "\n";
-                }
-
-                File::delete($filename);
-                File::delete($adminCodes);
-                File::delete(storage_path(strtoupper($country->code) . '.txt'));
-                File::delete(storage_path('readme.txt'));
+        // Prepare our region codes for matching cities with corresponding regions in the DB
+        $data = file_get_contents($adminCodes);
+        $lines = explode("\n", $data);
+        $codes = new Collection();
+        foreach ($lines as $line) {
+            $col = explode("\t", $line);
+            if (count($col) >= 2) {
+                $codes->put($col[0], $col[1]);
             }
         }
+
+        $zip = new \ZipArchive();
+
+        if($this->option('cities') && $this->option('cities') === 'major') {
+            $this->info('Seeding Major City Data');
+            copy($this->city_endpoint . 'cities15000.zip', $filename);
+            $path = storage_path('cities15000.txt');
+        }
+
+        elseif ($this->option('country')) {
+            if ($country = Country::code($this->option('country'))) {
+                $this->info('Seeding City Data for ' . $country->name);
+                copy($this->city_endpoint . strtoupper($country->code) . '.zip', $filename);
+                $path = storage_path(strtoupper($country->code) . '.txt');
+            }
+        }
+
+        if ($res = $zip->open($filename)) {
+            $zip->extractTo(storage_path());
+            $zip->close();
+
+            $data = file($path);
+            $bar = $this->output->createProgressBar(count($data));
+            $bar->start();
+
+            if($file = fopen($path, 'r')) {
+                while (!feof($file)) {
+                    $line = fgets($file);
+                    $col = explode("\t", $line);
+
+                    // Make sure this line in the file is fully formatted, otherwise it could be a dead line we can skip
+                    if (count($col) >= 10) {
+
+                        // Only work with the line if we have a valid region code
+                        if ($adminZone = $codes->get($col[8] . '.' . $col[10])) {
+                            if ($region = Region::name($adminZone)) {
+                                City::firstOrCreate(
+                                    ['country_id' => $region->country->id, 'name' => $col[1]],
+                                    ['region_id' => $region->id, 'code' => $col[7]]
+                                );
+                            }
+                        }
+                    }
+                    $bar->advance();
+                }
+                $bar->finish();
+                fclose($file);
+            }
+        }
+
+        File::delete($filename);
+        File::delete($adminCodes);
+        File::delete($path);
+        File::delete(storage_path('readme.txt'));
     }
 }
