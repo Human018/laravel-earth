@@ -122,9 +122,9 @@ class EarthInit extends Command
             }
 
             foreach($c['languages'] as $id => $language) {
-                $language = Language::firstOrCreate(
-                    ['code' => $language['iso639_1'], 'name' => $language['name']],
-                    ['iso3' => $language['iso639_2']]
+                $language = Language::updateOrCreate(
+                    ['code' => $language['iso639_1'], 'name' => $language['name'], 'iso3' => $language['iso639_2']],
+                    ['native' => $language['nativeName']]
                 );
 
                 $country->languages()->attach($language->id, ['primary' => $id === 0 ? 1 : 0]);

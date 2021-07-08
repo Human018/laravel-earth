@@ -11,7 +11,7 @@ class Language extends Model
 
     protected $table = 'earth_languages';
 
-    protected $fillable = ['name', 'code', 'iso3'];
+    protected $fillable = ['name', 'code', 'iso3', 'native'];
 
     public $timestamps = false;
 
@@ -19,6 +19,13 @@ class Language extends Model
     public function country()
     {
         return $this->morphedByMany(Country::class, 'area', 'earth_area_language');
+    }
+
+    // Attributes
+    public function getNativeAttribute()
+    {
+        if (strlen($this->attributes['native']) > 0) return $this->attributes['native'];
+        else return $this->attributes['name'];
     }
 
 }
