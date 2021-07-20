@@ -25,7 +25,8 @@ class Language extends Model
     public function getNativeAttribute()
     {
         if (isset($this->attributes['native']) && strlen($this->attributes['native']) > 0) return $this->attributes['native'];
-        else return $this->attributes['name'];
+        elseif (isset($this->attributes['name'])) return $this->attributes['name'];
+        return '';
     }
 
 }
