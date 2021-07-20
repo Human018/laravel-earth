@@ -11,6 +11,8 @@ class Continent extends Model
 
     protected $table = 'earth_continents';
 
+    protected $fillable = ['name', 'code'];
+
     public $timestamps = false;
 
     // Relationships
