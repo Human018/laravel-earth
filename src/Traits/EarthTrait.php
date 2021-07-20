@@ -11,12 +11,12 @@ trait EarthTrait
     }
 
     // Scopes
-    public static function code($code)
+    public static function code($code = null)
     {
         return (new static)::firstOrNew(['code' => strtolower($code)]);
     }
 
-    public static function name($name)
+    public static function name($name = null)
     {
         return (new static)::firstOrNew(['name' => $name]);
     }
