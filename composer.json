@@ -3,7 +3,7 @@
     "description": "A multilingual Laravel package to populate continents, countries, regions and cities for planet Earth",
     "type": "library",
     "require": {
-        "php": ">=7.4",
+        "php": ">=7.3",
         "laravel/framework": "^8.0.0",
         "npm-asset/country-region-data": "^1.7.0",
         "staudenmeir/eloquent-has-many-deep": "^1.7"
