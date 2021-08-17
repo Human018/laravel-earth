@@ -17,4 +17,9 @@ class Timezone extends Model
     {
         return $this->belongsToMany(Country::class, 'earth_country_currency', 'earth_currency_id', 'earth_country_id');
     }
+
+    public function utcs()
+    {
+        return $this->hasMany(TimezoneUTC::class, 'earth_timezone_id');
+    }
 }
