@@ -3,6 +3,7 @@
 namespace Human018\LaravelEarth\Commands;
 
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\RequestException;
 use Human018\LaravelEarth\Models\City;
 use Human018\LaravelEarth\Models\Continent;
 use Human018\LaravelEarth\Models\Country;
@@ -31,7 +32,7 @@ class EarthInit extends Command
      */
     protected $description = 'Initialise the Earth seed';
 
-    public $country_endpoint = 'https://restcountries.eu/rest/v2/all';
+    public $country_endpoint = 'http://api.countrylayer.com/v2/all';
     public $region_endpoint = 'vendor/npm-asset/country-region-data/data.json';
     public $city_endpoint = 'http://download.geonames.org/export/dump/';
 
@@ -80,7 +81,18 @@ class EarthInit extends Command
     public function seedCountries()
     {
         $client = new Client();
-        $res = $client->request('GET', $this->country_endpoint);
+
+        try {
+            $res = $client->request('GET', $this->country_endpoint, [
+                'query' => [
+                    'access_key' => config('services.countrylayer.key')
+                ]
+            ]);
+        } catch (RequestException $e) {
+            $res = $e->getResponse();
+            $this->warn($res->getBody());
+            die();
+        }
 
         $body = $res->getBody();
         $countries = json_decode($body, true);
@@ -112,22 +124,26 @@ class EarthInit extends Command
                 );
             }
 
-            foreach($c['currencies'] as $id => $currency) {
-                $currency = Currency::firstOrCreate(
-                    ['code' => $currency['code'], 'name' => $currency['name']],
-                    ['symbol' => $currency['symbol']]
-                );
+            if(isset($c['currencies'])) {
+                foreach ($c['currencies'] as $id => $currency) {
+                    $currency = Currency::firstOrCreate(
+                        ['code' => $currency['code'], 'name' => $currency['name']],
+                        ['symbol' => $currency['symbol']]
+                    );
 
-                $country->currencies()->attach($currency->id, ['primary' => $id === 0 ? 1 : 0]);
+                    $country->currencies()->attach($currency->id, ['primary' => $id === 0 ? 1 : 0]);
+                }
             }
 
-            foreach($c['languages'] as $id => $language) {
-                $language = Language::updateOrCreate(
-                    ['code' => $language['iso639_1'], 'name' => $language['name'], 'iso3' => $language['iso639_2']],
-                    ['native' => $language['nativeName']]
-                );
+            if(isset($c['languages'])) {
+                foreach ($c['languages'] as $id => $language) {
+                    $language = Language::updateOrCreate(
+                        ['code' => $language['iso639_1'], 'name' => $language['name'], 'iso3' => $language['iso639_2']],
+                        ['native' => $language['nativeName']]
+                    );
 
-                $country->languages()->attach($language->id, ['primary' => $id === 0 ? 1 : 0]);
+                    $country->languages()->attach($language->id, ['primary' => $id === 0 ? 1 : 0]);
+                }
             }
         }
     }

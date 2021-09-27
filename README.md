@@ -50,6 +50,7 @@ This project is built using Laravel 8 and is not currently backwards compatible 
 * Laravel 8
 * Guzzle
 * ZipArchive
+* Countrylayer API
 
 Because this library uses an NPM package as one of it's data sources, you will need to allow composer to download an NPM package. To do so add the following property (or append to the already existing property) to the `repositories` array/object in your composer.json file.
 ```json
@@ -61,6 +62,12 @@ Because this library uses an NPM package as one of it's data sources, you will n
     ]
 ```
 
+#### API Access
+You will require an API key with [countrylayer](https://countrylayer.com/) in order to use its services. A free key is available and all that will be required for the seed.
+Once you have you API key add it to your .env file.
+```dotenv
+COUNTRY_LAYER_API=XXX
+```
 
 ### Installation
 
@@ -157,7 +164,7 @@ Project Link: [https://github.com/Human018/laravel-earth](https://github.com/Hum
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
-* [REST COUNTRIES](https://restcountries.eu/)
+* [countrylayer](https://countrylayer.com/)
 * [country-region-data](https://github.com/country-regions/country-region-data)
 * [GeoNames](http://www.geonames.org/)
 
