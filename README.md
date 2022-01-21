@@ -64,7 +64,7 @@ Because this library uses an NPM package as one of it's data sources, you will n
 
 #### API Access
 You will require an API key with [countrylayer](https://countrylayer.com/) in order to use its services. A free key is available and all that will be required for the seed.
-Once you have you API key add it to your .env file.
+Once you have your API key add it to your .env file.
 ```dotenv
 COUNTRY_LAYER_API=XXX
 ```
@@ -115,7 +115,7 @@ $country = Country::code('au');
 echo $country->regions->count();
 // Returns '8'
 
-// eg 2. Code case is automatically handled for you
+// eg 2. You can pass in the Code in lower or upper case
 $country = Country::code('AU');
 
 // Eg 3. You can also search by name

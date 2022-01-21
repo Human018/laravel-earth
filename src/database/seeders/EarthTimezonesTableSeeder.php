@@ -14,12 +14,12 @@ class EarthTimezonesTableSeeder extends Seeder
      */
     public function run()
     {
-        
+
 
         \DB::table('earth_timezones')->delete();
-        
+
         \DB::table('earth_timezones')->insert(array (
-            0 => 
+            0 =>
             array (
                 'id' => 1,
                 'name' => 'Dateline Standard Time',
@@ -27,7 +27,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'DST',
                 'offset' => -12,
             ),
-            1 => 
+            1 =>
             array (
                 'id' => 2,
                 'name' => 'UTC-11',
@@ -35,7 +35,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'U',
                 'offset' => -11,
             ),
-            2 => 
+            2 =>
             array (
                 'id' => 3,
                 'name' => 'Hawaiian Standard Time',
@@ -43,7 +43,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'HST',
                 'offset' => -10,
             ),
-            3 => 
+            3 =>
             array (
                 'id' => 4,
                 'name' => 'Alaskan Standard Time',
@@ -51,7 +51,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'AKDT',
                 'offset' => -8,
             ),
-            4 => 
+            4 =>
             array (
                 'id' => 5,
             'name' => 'Pacific Standard Time (Mexico)',
@@ -59,7 +59,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'PDT',
                 'offset' => -7,
             ),
-            5 => 
+            5 =>
             array (
                 'id' => 6,
                 'name' => 'Pacific Daylight Time',
@@ -67,7 +67,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'PDT',
                 'offset' => -7,
             ),
-            6 => 
+            6 =>
             array (
                 'id' => 7,
                 'name' => 'Pacific Standard Time',
@@ -75,7 +75,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'PST',
                 'offset' => -8,
             ),
-            7 => 
+            7 =>
             array (
                 'id' => 8,
                 'name' => 'US Mountain Standard Time',
@@ -83,7 +83,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'UMST',
                 'offset' => -7,
             ),
-            8 => 
+            8 =>
             array (
                 'id' => 9,
             'name' => 'Mountain Standard Time (Mexico)',
@@ -91,7 +91,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'MDT',
                 'offset' => -6,
             ),
-            9 => 
+            9 =>
             array (
                 'id' => 10,
                 'name' => 'Mountain Standard Time',
@@ -99,7 +99,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'MDT',
                 'offset' => -6,
             ),
-            10 => 
+            10 =>
             array (
                 'id' => 11,
                 'name' => 'Central America Standard Time',
@@ -107,7 +107,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'CAST',
                 'offset' => -6,
             ),
-            11 => 
+            11 =>
             array (
                 'id' => 12,
                 'name' => 'Central Standard Time',
@@ -115,7 +115,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'CDT',
                 'offset' => -5,
             ),
-            12 => 
+            12 =>
             array (
                 'id' => 13,
             'name' => 'Central Standard Time (Mexico)',
@@ -123,7 +123,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'CDT',
                 'offset' => -5,
             ),
-            13 => 
+            13 =>
             array (
                 'id' => 14,
                 'name' => 'Canada Central Standard Time',
@@ -131,7 +131,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'CCST',
                 'offset' => -6,
             ),
-            14 => 
+            14 =>
             array (
                 'id' => 15,
                 'name' => 'SA Pacific Standard Time',
@@ -139,7 +139,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'SPST',
                 'offset' => -5,
             ),
-            15 => 
+            15 =>
             array (
                 'id' => 16,
                 'name' => 'Eastern Standard Time',
@@ -147,7 +147,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'EDT',
                 'offset' => -4,
             ),
-            16 => 
+            16 =>
             array (
                 'id' => 17,
                 'name' => 'US Eastern Standard Time',
@@ -155,7 +155,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'UEDT',
                 'offset' => -4,
             ),
-            17 => 
+            17 =>
             array (
                 'id' => 18,
                 'name' => 'Venezuela Standard Time',
@@ -163,7 +163,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'VST',
                 'offset' => -5,
             ),
-            18 => 
+            18 =>
             array (
                 'id' => 19,
                 'name' => 'Paraguay Standard Time',
@@ -171,7 +171,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'PYT',
                 'offset' => -4,
             ),
-            19 => 
+            19 =>
             array (
                 'id' => 20,
                 'name' => 'Atlantic Standard Time',
@@ -179,7 +179,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'ADT',
                 'offset' => -3,
             ),
-            20 => 
+            20 =>
             array (
                 'id' => 21,
                 'name' => 'Central Brazilian Standard Time',
@@ -187,7 +187,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'CBST',
                 'offset' => -4,
             ),
-            21 => 
+            21 =>
             array (
                 'id' => 22,
                 'name' => 'SA Western Standard Time',
@@ -195,7 +195,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'SWST',
                 'offset' => -4,
             ),
-            22 => 
+            22 =>
             array (
                 'id' => 23,
                 'name' => 'Pacific SA Standard Time',
@@ -203,7 +203,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'PSST',
                 'offset' => -4,
             ),
-            23 => 
+            23 =>
             array (
                 'id' => 24,
                 'name' => 'Newfoundland Standard Time',
@@ -211,7 +211,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'NDT',
                 'offset' => -3,
             ),
-            24 => 
+            24 =>
             array (
                 'id' => 25,
                 'name' => 'E. South America Standard Time',
@@ -219,7 +219,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'ESAST',
                 'offset' => -3,
             ),
-            25 => 
+            25 =>
             array (
                 'id' => 26,
                 'name' => 'Argentina Standard Time',
@@ -227,7 +227,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'AST',
                 'offset' => -3,
             ),
-            26 => 
+            26 =>
             array (
                 'id' => 27,
                 'name' => 'SA Eastern Standard Time',
@@ -235,7 +235,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'SEST',
                 'offset' => -3,
             ),
-            27 => 
+            27 =>
             array (
                 'id' => 28,
                 'name' => 'Greenland Standard Time',
@@ -243,7 +243,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'GDT',
                 'offset' => -3,
             ),
-            28 => 
+            28 =>
             array (
                 'id' => 29,
                 'name' => 'Montevideo Standard Time',
@@ -251,7 +251,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'MST',
                 'offset' => -3,
             ),
-            29 => 
+            29 =>
             array (
                 'id' => 30,
                 'name' => 'Bahia Standard Time',
@@ -259,7 +259,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'BST',
                 'offset' => -3,
             ),
-            30 => 
+            30 =>
             array (
                 'id' => 31,
                 'name' => 'UTC-02',
@@ -267,7 +267,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'U',
                 'offset' => -2,
             ),
-            31 => 
+            31 =>
             array (
                 'id' => 32,
                 'name' => 'Mid-Atlantic Standard Time',
@@ -275,7 +275,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'MDT',
                 'offset' => -1,
             ),
-            32 => 
+            32 =>
             array (
                 'id' => 33,
                 'name' => 'Azores Standard Time',
@@ -283,7 +283,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'ADT',
                 'offset' => 0,
             ),
-            33 => 
+            33 =>
             array (
                 'id' => 34,
                 'name' => 'Cape Verde Standard Time',
@@ -291,7 +291,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'CVST',
                 'offset' => -1,
             ),
-            34 => 
+            34 =>
             array (
                 'id' => 35,
                 'name' => 'Morocco Standard Time',
@@ -299,7 +299,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'MDT',
                 'offset' => 1,
             ),
-            35 => 
+            35 =>
             array (
                 'id' => 36,
                 'name' => 'UTC',
@@ -307,7 +307,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'UTC',
                 'offset' => 0,
             ),
-            36 => 
+            36 =>
             array (
                 'id' => 37,
                 'name' => 'GMT Standard Time',
@@ -315,7 +315,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'GMT',
                 'offset' => 0,
             ),
-            37 => 
+            37 =>
             array (
                 'id' => 38,
                 'name' => 'British Summer Time',
@@ -323,7 +323,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'BST',
                 'offset' => 1,
             ),
-            38 => 
+            38 =>
             array (
                 'id' => 39,
                 'name' => 'GMT Standard Time',
@@ -331,7 +331,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'GDT',
                 'offset' => 1,
             ),
-            39 => 
+            39 =>
             array (
                 'id' => 40,
                 'name' => 'Greenwich Standard Time',
@@ -339,7 +339,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'GST',
                 'offset' => 0,
             ),
-            40 => 
+            40 =>
             array (
                 'id' => 41,
                 'name' => 'W. Europe Standard Time',
@@ -347,7 +347,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'WEDT',
                 'offset' => 2,
             ),
-            41 => 
+            41 =>
             array (
                 'id' => 42,
                 'name' => 'Central Europe Standard Time',
@@ -355,7 +355,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'CEDT',
                 'offset' => 2,
             ),
-            42 => 
+            42 =>
             array (
                 'id' => 43,
                 'name' => 'Romance Standard Time',
@@ -363,7 +363,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'RDT',
                 'offset' => 2,
             ),
-            43 => 
+            43 =>
             array (
                 'id' => 44,
                 'name' => 'Central European Standard Time',
@@ -371,7 +371,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'CEDT',
                 'offset' => 2,
             ),
-            44 => 
+            44 =>
             array (
                 'id' => 45,
                 'name' => 'W. Central Africa Standard Time',
@@ -379,7 +379,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'WCAST',
                 'offset' => 1,
             ),
-            45 => 
+            45 =>
             array (
                 'id' => 46,
                 'name' => 'Namibia Standard Time',
@@ -387,7 +387,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'NST',
                 'offset' => 1,
             ),
-            46 => 
+            46 =>
             array (
                 'id' => 47,
                 'name' => 'GTB Standard Time',
@@ -395,7 +395,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'GDT',
                 'offset' => 3,
             ),
-            47 => 
+            47 =>
             array (
                 'id' => 48,
                 'name' => 'Middle East Standard Time',
@@ -403,7 +403,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'MEDT',
                 'offset' => 3,
             ),
-            48 => 
+            48 =>
             array (
                 'id' => 49,
                 'name' => 'Egypt Standard Time',
@@ -411,7 +411,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'EST',
                 'offset' => 2,
             ),
-            49 => 
+            49 =>
             array (
                 'id' => 50,
                 'name' => 'Syria Standard Time',
@@ -419,7 +419,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'SDT',
                 'offset' => 3,
             ),
-            50 => 
+            50 =>
             array (
                 'id' => 51,
                 'name' => 'E. Europe Standard Time',
@@ -427,7 +427,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'EEDT',
                 'offset' => 3,
             ),
-            51 => 
+            51 =>
             array (
                 'id' => 52,
                 'name' => 'South Africa Standard Time',
@@ -435,7 +435,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'SAST',
                 'offset' => 2,
             ),
-            52 => 
+            52 =>
             array (
                 'id' => 53,
                 'name' => 'FLE Standard Time',
@@ -443,7 +443,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'FDT',
                 'offset' => 3,
             ),
-            53 => 
+            53 =>
             array (
                 'id' => 54,
                 'name' => 'Turkey Standard Time',
@@ -451,7 +451,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'TDT',
                 'offset' => 3,
             ),
-            54 => 
+            54 =>
             array (
                 'id' => 55,
                 'name' => 'Israel Standard Time',
@@ -459,7 +459,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'JDT',
                 'offset' => 3,
             ),
-            55 => 
+            55 =>
             array (
                 'id' => 56,
                 'name' => 'Libya Standard Time',
@@ -467,7 +467,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'LST',
                 'offset' => 2,
             ),
-            56 => 
+            56 =>
             array (
                 'id' => 57,
                 'name' => 'Jordan Standard Time',
@@ -475,7 +475,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'JST',
                 'offset' => 3,
             ),
-            57 => 
+            57 =>
             array (
                 'id' => 58,
                 'name' => 'Arabic Standard Time',
@@ -483,7 +483,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'AST',
                 'offset' => 3,
             ),
-            58 => 
+            58 =>
             array (
                 'id' => 59,
                 'name' => 'Kaliningrad Standard Time',
@@ -491,7 +491,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'KST',
                 'offset' => 3,
             ),
-            59 => 
+            59 =>
             array (
                 'id' => 60,
                 'name' => 'Arab Standard Time',
@@ -499,7 +499,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'AST',
                 'offset' => 3,
             ),
-            60 => 
+            60 =>
             array (
                 'id' => 61,
                 'name' => 'E. Africa Standard Time',
@@ -507,7 +507,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'EAST',
                 'offset' => 3,
             ),
-            61 => 
+            61 =>
             array (
                 'id' => 62,
                 'name' => 'Moscow Standard Time',
@@ -515,7 +515,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'MSK',
                 'offset' => 3,
             ),
-            62 => 
+            62 =>
             array (
                 'id' => 63,
                 'name' => 'Samara Time',
@@ -523,7 +523,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'SAMT',
                 'offset' => 4,
             ),
-            63 => 
+            63 =>
             array (
                 'id' => 64,
                 'name' => 'Iran Standard Time',
@@ -531,7 +531,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'IDT',
                 'offset' => 5,
             ),
-            64 => 
+            64 =>
             array (
                 'id' => 65,
                 'name' => 'Arabian Standard Time',
@@ -539,7 +539,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'AST',
                 'offset' => 4,
             ),
-            65 => 
+            65 =>
             array (
                 'id' => 66,
                 'name' => 'Azerbaijan Standard Time',
@@ -547,7 +547,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'ADT',
                 'offset' => 5,
             ),
-            66 => 
+            66 =>
             array (
                 'id' => 67,
                 'name' => 'Mauritius Standard Time',
@@ -555,7 +555,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'MST',
                 'offset' => 4,
             ),
-            67 => 
+            67 =>
             array (
                 'id' => 68,
                 'name' => 'Georgian Standard Time',
@@ -563,7 +563,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'GET',
                 'offset' => 4,
             ),
-            68 => 
+            68 =>
             array (
                 'id' => 69,
                 'name' => 'Caucasus Standard Time',
@@ -571,7 +571,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'CST',
                 'offset' => 4,
             ),
-            69 => 
+            69 =>
             array (
                 'id' => 70,
                 'name' => 'Afghanistan Standard Time',
@@ -579,7 +579,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'AST',
                 'offset' => 5,
             ),
-            70 => 
+            70 =>
             array (
                 'id' => 71,
                 'name' => 'West Asia Standard Time',
@@ -587,7 +587,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'WAST',
                 'offset' => 5,
             ),
-            71 => 
+            71 =>
             array (
                 'id' => 72,
                 'name' => 'Yekaterinburg Time',
@@ -595,7 +595,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'YEKT',
                 'offset' => 5,
             ),
-            72 => 
+            72 =>
             array (
                 'id' => 73,
                 'name' => 'Pakistan Standard Time',
@@ -603,7 +603,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'PKT',
                 'offset' => 5,
             ),
-            73 => 
+            73 =>
             array (
                 'id' => 74,
                 'name' => 'India Standard Time',
@@ -611,7 +611,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'IST',
                 'offset' => 6,
             ),
-            74 => 
+            74 =>
             array (
                 'id' => 75,
                 'name' => 'Sri Lanka Standard Time',
@@ -619,7 +619,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'SLST',
                 'offset' => 6,
             ),
-            75 => 
+            75 =>
             array (
                 'id' => 76,
                 'name' => 'Nepal Standard Time',
@@ -627,7 +627,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'NST',
                 'offset' => 6,
             ),
-            76 => 
+            76 =>
             array (
                 'id' => 77,
                 'name' => 'Central Asia Standard Time',
@@ -635,7 +635,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'CAST',
                 'offset' => 6,
             ),
-            77 => 
+            77 =>
             array (
                 'id' => 78,
                 'name' => 'Bangladesh Standard Time',
@@ -643,7 +643,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'BST',
                 'offset' => 6,
             ),
-            78 => 
+            78 =>
             array (
                 'id' => 79,
                 'name' => 'Myanmar Standard Time',
@@ -651,7 +651,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'MST',
                 'offset' => 7,
             ),
-            79 => 
+            79 =>
             array (
                 'id' => 80,
                 'name' => 'SE Asia Standard Time',
@@ -659,7 +659,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'SAST',
                 'offset' => 7,
             ),
-            80 => 
+            80 =>
             array (
                 'id' => 81,
                 'name' => 'N. Central Asia Standard Time',
@@ -667,7 +667,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'NCAST',
                 'offset' => 7,
             ),
-            81 => 
+            81 =>
             array (
                 'id' => 82,
                 'name' => 'China Standard Time',
@@ -675,7 +675,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'CST',
                 'offset' => 8,
             ),
-            82 => 
+            82 =>
             array (
                 'id' => 83,
                 'name' => 'North Asia Standard Time',
@@ -683,7 +683,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'NAST',
                 'offset' => 8,
             ),
-            83 => 
+            83 =>
             array (
                 'id' => 84,
                 'name' => 'Singapore Standard Time',
@@ -691,7 +691,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'MPST',
                 'offset' => 8,
             ),
-            84 => 
+            84 =>
             array (
                 'id' => 85,
                 'name' => 'W. Australia Standard Time',
@@ -699,7 +699,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'WAST',
                 'offset' => 8,
             ),
-            85 => 
+            85 =>
             array (
                 'id' => 86,
                 'name' => 'Taipei Standard Time',
@@ -707,7 +707,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'TST',
                 'offset' => 8,
             ),
-            86 => 
+            86 =>
             array (
                 'id' => 87,
                 'name' => 'Ulaanbaatar Standard Time',
@@ -715,7 +715,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'UST',
                 'offset' => 8,
             ),
-            87 => 
+            87 =>
             array (
                 'id' => 88,
                 'name' => 'North Asia East Standard Time',
@@ -723,7 +723,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'NAEST',
                 'offset' => 8,
             ),
-            88 => 
+            88 =>
             array (
                 'id' => 89,
                 'name' => 'Japan Standard Time',
@@ -731,7 +731,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'JST',
                 'offset' => 9,
             ),
-            89 => 
+            89 =>
             array (
                 'id' => 90,
                 'name' => 'Korea Standard Time',
@@ -739,7 +739,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'KST',
                 'offset' => 9,
             ),
-            90 => 
+            90 =>
             array (
                 'id' => 91,
                 'name' => 'Cen. Australia Standard Time',
@@ -747,7 +747,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'CAST',
                 'offset' => 10,
             ),
-            91 => 
+            91 =>
             array (
                 'id' => 92,
                 'name' => 'AUS Central Standard Time',
@@ -755,7 +755,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'ACST',
                 'offset' => 10,
             ),
-            92 => 
+            92 =>
             array (
                 'id' => 93,
                 'name' => 'E. Australia Standard Time',
@@ -763,7 +763,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'EAST',
                 'offset' => 10,
             ),
-            93 => 
+            93 =>
             array (
                 'id' => 94,
                 'name' => 'AUS Eastern Standard Time',
@@ -771,7 +771,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'AEST',
                 'offset' => 10,
             ),
-            94 => 
+            94 =>
             array (
                 'id' => 95,
                 'name' => 'West Pacific Standard Time',
@@ -779,7 +779,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'WPST',
                 'offset' => 10,
             ),
-            95 => 
+            95 =>
             array (
                 'id' => 96,
                 'name' => 'Tasmania Standard Time',
@@ -787,7 +787,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'TST',
                 'offset' => 10,
             ),
-            96 => 
+            96 =>
             array (
                 'id' => 97,
                 'name' => 'Yakutsk Standard Time',
@@ -795,7 +795,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'YST',
                 'offset' => 9,
             ),
-            97 => 
+            97 =>
             array (
                 'id' => 98,
                 'name' => 'Central Pacific Standard Time',
@@ -803,7 +803,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'CPST',
                 'offset' => 11,
             ),
-            98 => 
+            98 =>
             array (
                 'id' => 99,
                 'name' => 'Vladivostok Standard Time',
@@ -811,7 +811,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'VST',
                 'offset' => 11,
             ),
-            99 => 
+            99 =>
             array (
                 'id' => 100,
                 'name' => 'New Zealand Standard Time',
@@ -819,7 +819,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'NZST',
                 'offset' => 12,
             ),
-            100 => 
+            100 =>
             array (
                 'id' => 101,
                 'name' => 'UTC+12',
@@ -827,7 +827,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'U',
                 'offset' => 12,
             ),
-            101 => 
+            101 =>
             array (
                 'id' => 102,
                 'name' => 'Fiji Standard Time',
@@ -835,7 +835,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'FST',
                 'offset' => 12,
             ),
-            102 => 
+            102 =>
             array (
                 'id' => 103,
                 'name' => 'Magadan Standard Time',
@@ -843,7 +843,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'MST',
                 'offset' => 12,
             ),
-            103 => 
+            103 =>
             array (
                 'id' => 104,
                 'name' => 'Kamchatka Standard Time',
@@ -851,7 +851,7 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'KDT',
                 'offset' => 13,
             ),
-            104 => 
+            104 =>
             array (
                 'id' => 105,
                 'name' => 'Tonga Standard Time',
@@ -859,128 +859,16 @@ class EarthTimezonesTableSeeder extends Seeder
                 'abbreviation' => 'TST',
                 'offset' => 13,
             ),
-            105 => 
+            105 =>
             array (
                 'id' => 106,
                 'name' => 'Samoa Standard Time',
             'label' => '(UTC+13:00) Samoa',
                 'abbreviation' => 'SST',
                 'offset' => 13,
-            ),
-            106 => 
-            array (
-                'id' => 107,
-                'name' => 'Venezuela Standard Time',
-            'label' => '(UTC-04:30) Caracas',
-                'abbreviation' => 'VST',
-                'offset' => -5,
-            ),
-            107 => 
-            array (
-                'id' => 108,
-                'name' => 'Venezuela Standard Time',
-            'label' => '(UTC-04:30) Caracas',
-                'abbreviation' => 'VST',
-                'offset' => -5,
-            ),
-            108 => 
-            array (
-                'id' => 109,
-                'name' => 'Venezuela Standard Time',
-            'label' => '(UTC-04:30) Caracas',
-                'abbreviation' => 'VST',
-                'offset' => -5,
-            ),
-            109 => 
-            array (
-                'id' => 110,
-                'name' => 'Venezuela Standard Time',
-            'label' => '(UTC-04:30) Caracas',
-                'abbreviation' => 'VST',
-                'offset' => -5,
-            ),
-            110 => 
-            array (
-                'id' => 111,
-                'name' => 'Venezuela Standard Time',
-            'label' => '(UTC-04:30) Caracas',
-                'abbreviation' => 'VST',
-                'offset' => -5,
-            ),
-            111 => 
-            array (
-                'id' => 112,
-                'name' => 'Venezuela Standard Time',
-            'label' => '(UTC-04:30) Caracas',
-                'abbreviation' => 'VST',
-                'offset' => -5,
-            ),
-            112 => 
-            array (
-                'id' => 113,
-                'name' => 'Venezuela Standard Time',
-            'label' => '(UTC-04:30) Caracas',
-                'abbreviation' => 'VST',
-                'offset' => -5,
-            ),
-            113 => 
-            array (
-                'id' => 114,
-                'name' => 'Venezuela Standard Time',
-            'label' => '(UTC-04:30) Caracas',
-                'abbreviation' => 'VST',
-                'offset' => -5,
-            ),
-            114 => 
-            array (
-                'id' => 115,
-                'name' => 'Venezuela Standard Time',
-            'label' => '(UTC-04:30) Caracas',
-                'abbreviation' => 'VST',
-                'offset' => -5,
-            ),
-            115 => 
-            array (
-                'id' => 116,
-                'name' => 'Newfoundland Standard Time',
-            'label' => '(UTC-03:30) Newfoundland',
-                'abbreviation' => 'NDT',
-                'offset' => -3,
-            ),
-            116 => 
-            array (
-                'id' => 117,
-                'name' => 'Venezuela Standard Time',
-            'label' => '(UTC-04:30) Caracas',
-                'abbreviation' => 'VST',
-                'offset' => -5,
-            ),
-            117 => 
-            array (
-                'id' => 118,
-                'name' => 'Newfoundland Standard Time',
-            'label' => '(UTC-03:30) Newfoundland',
-                'abbreviation' => 'NDT',
-                'offset' => -3,
-            ),
-            118 => 
-            array (
-                'id' => 119,
-                'name' => 'Venezuela Standard Time',
-            'label' => '(UTC-04:30) Caracas',
-                'abbreviation' => 'VST',
-                'offset' => -5,
-            ),
-            119 => 
-            array (
-                'id' => 120,
-                'name' => 'Newfoundland Standard Time',
-            'label' => '(UTC-03:30) Newfoundland',
-                'abbreviation' => 'NDT',
-                'offset' => -3,
-            ),
+            )
         ));
-        
-        
+
+
     }
 }

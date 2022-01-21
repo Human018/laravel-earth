@@ -97,6 +97,15 @@ class EarthInit extends Command
         $body = $res->getBody();
         $countries = json_decode($body, true);
 
+        if (isset($countries['error'])) {
+            if ($countries['error']['type'] === 'missing_access_key') {
+                $this->warn('An API key with https://countrylayer.com/ in order to use it\'s services. A free key can be obtained from that domain and be used for this seed.');
+            } else {
+                $this->warn($countries['error']['info']);
+            }
+            die();
+        }
+
         foreach($countries as $c) {
             $country = Country::firstOrNew(
                 ['code' => strtolower($c['alpha2Code'])],
