@@ -47,7 +47,7 @@ This project is built using Laravel 8 and is not currently backwards compatible 
 ### Prerequisites
 
 * PHP 7.4
-* Laravel 8, 9 or 10
+* Laravel 8, 9, 10 or 11
 * Guzzle
 * ZipArchive
 * Countrylayer API
