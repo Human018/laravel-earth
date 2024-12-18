@@ -11,42 +11,42 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('earth_continents', function (Blueprint $table)
+        Schema::table('earth_continents', function (Blueprint $table)
         {
             $table->timestamps();
         });
 
-        Schema::create('earth_countries', function(Blueprint $table)
+        Schema::table('earth_countries', function(Blueprint $table)
         {
             $table->timestamps();
         });
 
-        Schema::create('earth_regions', function(Blueprint $table)
+        Schema::table('earth_regions', function(Blueprint $table)
         {
             $table->timestamps();
         });
 
-        Schema::create('earth_cities', function(Blueprint $table)
+        Schema::table('earth_cities', function(Blueprint $table)
         {
             $table->timestamps();
         });
 
-        Schema::create('earth_languages', function(Blueprint $table)
+        Schema::table('earth_languages', function(Blueprint $table)
         {
             $table->timestamps();
         });
 
-        Schema::create('earth_currencies', function(Blueprint $table)
+        Schema::table('earth_currencies', function(Blueprint $table)
         {
             $table->timestamps();
         });
 
-        Schema::create('earth_area_language', function(Blueprint $table)
+        Schema::table('earth_area_language', function(Blueprint $table)
         {
             $table->timestamps();
         });
 
-        Schema::create('earth_country_currency', function(Blueprint $table)
+        Schema::table('earth_country_currency', function(Blueprint $table)
         {
             $table->timestamps();
         });
@@ -57,42 +57,42 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::create('earth_continents', function (Blueprint $table)
+        Schema::table('earth_continents', function (Blueprint $table)
         {
             $table->dropTimestamps();
         });
 
-        Schema::create('earth_countries', function(Blueprint $table)
+        Schema::table('earth_countries', function(Blueprint $table)
         {
             $table->dropTimestamps();
         });
 
-        Schema::create('earth_regions', function(Blueprint $table)
+        Schema::table('earth_regions', function(Blueprint $table)
         {
             $table->dropTimestamps();
         });
 
-        Schema::create('earth_cities', function(Blueprint $table)
+        Schema::table('earth_cities', function(Blueprint $table)
         {
             $table->dropTimestamps();
         });
 
-        Schema::create('earth_languages', function(Blueprint $table)
+        Schema::table('earth_languages', function(Blueprint $table)
         {
             $table->dropTimestamps();
         });
 
-        Schema::create('earth_currencies', function(Blueprint $table)
+        Schema::table('earth_currencies', function(Blueprint $table)
         {
             $table->dropTimestamps();
         });
 
-        Schema::create('earth_area_language', function(Blueprint $table)
+        Schema::table('earth_area_language', function(Blueprint $table)
         {
             $table->dropTimestamps();
         });
 
-        Schema::create('earth_country_currency', function(Blueprint $table)
+        Schema::table('earth_country_currency', function(Blueprint $table)
         {
             $table->dropTimestamps();
         });
