@@ -13,8 +13,6 @@ class City extends Model
 
     protected $fillable = ['country_id', 'region_id', 'name', 'code', 'country_capital', 'region_capital'];
 
-    public $timestamps = false;
-
     // Relationships
     public function country()
     {
