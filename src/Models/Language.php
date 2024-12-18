@@ -13,8 +13,6 @@ class Language extends Model
 
     protected $fillable = ['name', 'code', 'iso3', 'native'];
 
-    public $timestamps = false;
-
     // Relationships
     public function country()
     {
