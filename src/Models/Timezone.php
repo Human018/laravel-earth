@@ -10,8 +10,6 @@ class Timezone extends Model
 
     protected $fillable = ['name', 'label', 'abbreviation', 'offset'];
 
-    public $timestamps = false;
-
     // Relationships
     public function country()
     {

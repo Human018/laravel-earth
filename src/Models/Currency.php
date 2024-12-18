@@ -13,8 +13,6 @@ class Currency extends Model
 
     protected $fillable = ['name', 'code', 'symbol'];
 
-    public $timestamps = false;
-
     // Relationships
     public function country()
     {

@@ -10,8 +10,6 @@ class TimezoneUTC extends Model
 
     protected $fillable = ['earth_timezone_id', 'name'];
 
-    public $timestamps = false;
-
     // Relationships
     public function timezone()
     {

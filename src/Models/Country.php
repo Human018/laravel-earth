@@ -14,8 +14,6 @@ class Country extends Model
 
     protected $fillable = ['name', 'code', 'iso3', 'tld', 'calling_code'];
 
-    public $timestamps = false;
-
     // Relationships
     public function continent()
     {
