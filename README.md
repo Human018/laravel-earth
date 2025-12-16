@@ -36,8 +36,8 @@ A multilingual Laravel package to populate continents, countries, regions, citie
 
 ### Built With
 
-* PHP
-* [Laravel](https://laravel.com)
+* PHP ^8.2
+* [Laravel ^10](https://laravel.com)
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -46,8 +46,8 @@ This project is built using Laravel 8 and is not currently backwards compatible 
 
 ### Prerequisites
 
-* PHP 7.4
-* Laravel 8, 9, 10 or 11
+* PHP 8.2
+* Laravel 10, 11 or 12
 * Guzzle
 * ZipArchive
 * Countrylayer API
